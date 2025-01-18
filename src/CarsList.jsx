@@ -1,60 +1,25 @@
+import PropTypes from "prop-types";
 import CarDetails from "./CarDetails";
 
-const CARS = [
-  {
-    id: 1,
-    title: "Luxury Sedan",
-    brand: "Mercedes",
-    year: 2023,
-    price: 80000,
-    isPremium: true,
-  },
-  {
-    id: 2,
-    title: "Family SUV",
-    brand: "Toyota",
-    year: 2022,
-    price: 45000,
-    isPremium: false,
-  },
-  {
-    id: 3,
-    title: "Sports Car",
-    brand: "Porsche",
-    year: 2023,
-    price: 120000,
-    isPremium: true,
-  },
-  {
-    id: 4,
-    title: "Electric Hatchback",
-    brand: "Nissan",
-    year: 2022,
-    price: 35000,
-    isPremium: false,
-  },
-  {
-    id: 5,
-    title: "Luxury SUV",
-    brand: "BMW",
-    year: 2023,
-    price: 90000,
-    isPremium: true,
-  },
-];
+const CarsList = ({ cars, searchTram, checkPremiumCar }) => {
+  const row = [];
+  cars.forEach((car) => {
+    if (car.title.toLowerCase().indexOf(searchTram.toLowerCase()) === -1) {
+      return;
+    }
+    if (checkPremiumCar && !car.isPremium) {
+      return;
+    }
+    row.push(<CarDetails key={car.id} car={car} />);
+  });
 
-const CarsList = () => {
-  return (
-    <>
-      <ul className="grid grid-cols-3 gap-4">
-        {CARS.map((car) => (
-          <li key={car.id} className="p-3 border rounded-md shadow">
-            <CarDetails car={car} />
-          </li>
-        ))}
-      </ul>
-    </>
-  );
+  return <div className="grid grid-cols-3 gap-4">{row}</div>;
+};
+
+CarsList.propTypes = {
+  cars: PropTypes.object.isRequired,
+  searchTram: PropTypes.string.isRequired,
+  checkPremiumCar: PropTypes.bool.isRequired,
 };
 
 export default CarsList;

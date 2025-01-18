@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const CarDetails = ({ car }) => {
   const { title, brand, year, price, isPremium } = car;
   return (
-    <div>
+    <div className="shadow border rounded-md p-3">
       <h2 className="text-xl">{title}</h2>
       <p>
         <span className="font-bold">Brand: </span>
