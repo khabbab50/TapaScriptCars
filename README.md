@@ -36,7 +36,7 @@ TapaScirptCar is a fast and interactive React app built with Vite. It displays a
 
 ### 🌐 Live Demo
 
-Check out the deployed app here: [Click here](https://github.com/khabbab50/TapaScriptCars.git)
+Check out the deployed app here: [Click here](https://tapa-script-cars-blond.vercel.app/)
 
 ---
 
