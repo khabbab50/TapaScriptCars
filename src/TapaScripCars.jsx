@@ -61,7 +61,7 @@ const TapaScripCars = () => {
         checkPremiumCar={checkPremiumCar}
         onCheckCar={onCheckCar}
         searchTram={searchTram}
-        onSearchBook={setSerarchTram}
+        onSearchCar={setSerarchTram}
       />
       <CarsList
         checkPremiumCar={checkPremiumCar}
